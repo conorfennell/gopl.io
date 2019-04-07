@@ -13,22 +13,24 @@ import (
 	"image/color"
 	"image/gif"
 	"io"
+	"log"
 	"math"
 	"math/rand"
+	"net/http"
 	"os"
+	"time"
 )
 
 //!-main
 // Packages not needed by version in book.
-import (
-	"log"
-	"net/http"
-	"time"
-)
 
 //!+main
 
-var palette = []color.Color{color.White, color.Black}
+// var palette = []color.Color{color.White, color.Black}
+
+var red = color.RGBA{255, 0, 0, 255}
+var green = color.RGBA{0, 255, 0, 255}
+var palette = []color.Color{green, red}
 
 const (
 	whiteIndex = 0 // first color in palette
