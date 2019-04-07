@@ -21,6 +21,8 @@ func main() {
 			url = fmt.Sprintf("http://%s", url)
 		}
 		resp, err := http.Get(url)
+
+		fmt.Printf("Status code %d\n", resp.StatusCode)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "fetch: %v\n", err)
 			os.Exit(1)
