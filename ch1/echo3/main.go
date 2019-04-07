@@ -9,13 +9,24 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
+	"time"
 )
 
 //!+
 func main() {
-	for index, argument := range os.Args[1:] {
+	before := time.Now()
+	for index, argument := range os.Args {
 		fmt.Println(index, argument)
 	}
+	after := time.Now()
+	fmt.Println(after.Sub(before))
+
+	before = time.Now()
+	fmt.Println(strings.Join(os.Args[1:], " "))
+	after = time.Now()
+	fmt.Println(after.Sub(before))
+
 }
 
 //!-
